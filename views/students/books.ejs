@@ -1,0 +1,54 @@
+<%-include('../partials/header.html')%>
+    <link rel="stylesheet" href="/../../css/students.css">
+    <title>Books</title>
+    </head>
+
+    <body>
+
+        <%-include('partials/navbar.html')%>
+            <div class="container-fluid">
+                <div class="row">
+                    <%-include('partials/sidebar.html')%>
+                        <div class="col-md-10 content">
+                            <form method="post">
+                                <div class="input-group mb-5 search-bar">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">Search Books</label>
+                                    </div>
+                                    <select class="custom-select dropbar" id="inputGroupSelect01" name="searchBy">
+                                            <option selected>By...</option>
+                                            <option value="genre">Genre</option>
+                                            <option value="title">Title</option>
+                                            <option value="author">Author</option>
+                                        </select>
+                                    <div class="form-inline">
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="word">
+                                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                                <% for(var i=0; i< res.length; i++){ %>
+                                    <section class="cards-wrapper">
+                                        <!-- <div class="card-grid-space"> -->
+                                    <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+                                        <div>
+                                            <h4><%=res[i].book_id%></h4>
+                                                <h1><%=res[i].title%></h1>
+                                                <p><%=res[i].genre%></p>
+                                                <div class="date">6 Oct 2017</div>
+                                                <div class="tags">
+                                            <div class="tag">HTML</div>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    <!-- <div class="card-grid-space"> -->
+                                    </div>
+                                    </section>
+                                <% } %>
+                        </div>
+                </div>
+            </div>
+<%-include('../partials/footer.html')%>
+
+
