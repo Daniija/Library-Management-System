@@ -48,39 +48,6 @@
     margin-top: 2rem;
 }
 
-
-/* admin/profile.css */
-
-.profile-content {
-    /* background-color: #343A40; */
-    background-color: #CCE5FF;
-    height: 35rem;
-    margin-left: 2rem;
-    float: left;
-    /* opacity: 0.5; */
-    color: black;
-    padding-top: 2rem;
-    text-align: center;
-}
-
-.profile-content hr {
-    background-color: grey;
-}
-
-.profile-content a:visited {
-    text-decoration: none;
-}
-
-.profile-content a:hover {
-    text-decoration: none;
-}
-
-.profile-pic {
-    width: 25rem;
-    padding-left: 2rem;
-}
-
-
 /* admin/books/add.css */
 
 .books-content {
@@ -88,21 +55,6 @@
     background-color: #CCE5FF;
     height: 46rem;
     margin-left: 2rem;
-    float: left;
-    /* opacity: 0.5; */
-    color: black;
-    padding-top: 2rem;
-    text-align: center;
-}
-
-/* admin/changepass.css */
-
-.change-password {
-    /* background-color: #343A40; */
-    background-color: #CCE5FF;
-    height: 25rem;
-    margin-left: 2rem;
-    margin-top: 5rem;
     float: left;
     /* opacity: 0.5; */
     color: black;
@@ -122,9 +74,4 @@
     color: black;
     padding-top: 2rem;
     text-align: center;
-}
-
-.gender {
-    width: 20rem;
-    margin: auto;
 }

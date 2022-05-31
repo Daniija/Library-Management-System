@@ -30,19 +30,19 @@
                                             <th scope="row">
                                                 <%=res[i].book_id%>
                                             </th>
-                                            <td>
+                                            <td scope="row">
                                                 <%=res[i].genre%>
                                             </td>
-                                            <td>
+                                            <td scope="row">
                                                 <%=res[i].title%>
                                             </td>
-                                            <td>
+                                            <td scope="row">
                                                 <%=res[i].author%>
                                             </td>
-                                            <td>
+                                            <td scope="row">
                                                 <%=res[i].date_issued%>
                                             </td>
-                                            <td>
+                                            <td scope="row">
                                                 <%
                                                     var date1 = new Date(res[i].date_issued);
                                                     var date2 = new Date();
@@ -52,15 +52,15 @@
                                                 %>
                                                 <%=leftValid+" Days"%>
                                             </td>
-                                            <td>
+                                            <td scope="row">
                                                 <% if(leftValid >= 1) { %>
                                                     Valid
                                                 <% } else { %>
-                                                    Invalid
+                                                    <span style="color: red;">Invalid</span>
                                                 <% } %>
                                             </td>
-                                            <td>
-                                                <button type="button" class="btn btn-warning">Warning</button>
+                                            <td scope="row">
+                                                <a href="borrowed-books/update/<%= res[i].book_id %>" class="btn btn-danger">Return</a>
                                             </td>
                                         </tr>
                                         <% } %>

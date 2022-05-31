@@ -26,15 +26,6 @@ module.exports = {
                 type: 'email',
                 message: 'Invalid email'
             },
-            phone: {
-                required: true,
-                len: 11,
-                message: 'Invalid Phone'
-            },
-            address: {
-                required: true,
-                message: 'Invalid Address'
-            },
             gender: {
                 required: true,
                 message: 'Must select a gender'
@@ -51,23 +42,6 @@ module.exports = {
                 message: 'Password cannot be empty'
             }
         },
-        changePassword: {
-            oldPassword: {
-                required: true,
-                min: 4,
-                message: 'Invalid old password'
-            },
-            newPassword: {
-                required: true,
-                min: 4,
-                message: 'Invalid new password'
-            },
-            confirmPassword: {
-                required: true,
-                min: 4,
-                message: 'Invalid confirm password'
-            }
-        }
     },
 
     books: {
@@ -97,14 +71,6 @@ module.exports = {
             author: {
                 required: true,
                 message: 'Author cannot be empty'
-            },
-            edition: {
-                required: true,
-                message: 'Invalid Edition'
-            },
-            isbn: {
-                required: true,
-                message: 'ISBN cannot be empty'
             }
         }
     }

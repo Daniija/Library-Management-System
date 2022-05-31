@@ -43,6 +43,14 @@ var deleteBook = (id, callback) => {
     });
 };
 
+// return book to the library
+// var returnBook = (id, callback) => {
+//     var sql = "DELETE FROM issue_date WHERE issue_id = ?, user_id = ?, book_id = ?";
+//     db.executeQuery(sql, [id], function(result) {
+//         callback(result);
+//     })
+// }
+
 var issueBook = (book_id, student_id, callback) => {
     var date = new Date();
     var sql = "UPDATE books SET user_id = ?, date_issued = ? WHERE book_id = ?";
@@ -140,7 +148,7 @@ var mostBorrowedBook = (callback) => {
 };
 
 var mostRequestedBook = (callback) => {
-    var sql = "SELECT *, COUNT(*) AS magnitude FROM books_request GROUP BY isbn ORDER BY magnitude DESC LIMIT 1";
+    var sql = "SELECT *, COUNT(*) AS magnitude FROM books_request GROUP BY title ORDER BY magnitude DESC LIMIT 1";
     db.executeQuery(sql, null, function(result) {
         callback(result[0]);
     });
@@ -156,6 +164,7 @@ module.exports = {
     getBook,
     updateBook,
     deleteBook,
+    // returnBook,
     issueBook,
     unissueBook,
     getIssuedBooks,
