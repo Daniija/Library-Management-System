@@ -81,12 +81,6 @@ var getUserReturn = (id, callback) => {
         callback(result);
     }) 
 }
-var getUserHistory = (id, callback) => {
-    var sql = "SELECT issue_date.user_id, issue_date.book_id, books.title, books.author, books.publisher, books.edition, books.isbn, issue_date.date FROM issue_date INNER JOIN books ON issue_date.book_id=books.book_id WHERE issue_date.user_id=?";
-    db.executeQuery(sql, [id], function(result) {
-        callback(result);
-    });
-};
 
 var totalBooksBorrowedByStudent = (id, callback) => {
     var sql = "SELECT books.*, issue_date.book_id FROM issue_date INNER JOIN books ON issue_date.book_id=books.book_id WHERE issue_date.user_id = ?";
@@ -108,6 +102,5 @@ module.exports = {
     deleteUser,
     getUserBorrow,
     getUserReturn,
-    getUserHistory,
     totalBooksBorrowedByStudent
 };

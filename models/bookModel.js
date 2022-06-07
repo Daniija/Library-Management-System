@@ -43,14 +43,6 @@ var deleteBook = (id, callback) => {
     });
 };
 
-// return book to the library
-// var returnBook = (id, callback) => {
-//     var sql = "DELETE FROM issue_date WHERE issue_id = ?, user_id = ?, book_id = ?";
-//     db.executeQuery(sql, [id], function(result) {
-//         callback(result);
-//     })
-// }
-
 var issueBook = (book_id, student_id, callback) => {
     var date = new Date();
     var sql = "UPDATE books SET user_id = ?, date_issued = ? WHERE book_id = ?";
@@ -164,7 +156,6 @@ module.exports = {
     getBook,
     updateBook,
     deleteBook,
-    // returnBook,
     issueBook,
     unissueBook,
     getIssuedBooks,

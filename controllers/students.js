@@ -18,18 +18,6 @@ router.get('/home', (req, res)=> {
     });
 });
 
-router.get('/profile', (req, res)=> {
-    var students = userModel.getUser(req.session.students, (result)=> {
-        if(!result){
-            res.send("invalid!");
-        }
-        else {
-            console.log(result);
-            res.render('students/profile', {res: result});
-        }
-    });
-});
-
 router.get('/profile/edit', (req, res)=> {
     var students = userModel.getUser(req.session.students, (result)=> {
         if(!result){
@@ -154,18 +142,6 @@ router.post('/books/request', (req, res)=> {
         }
     });
 });
-router.get('/books/history', (req, res)=> {
-    userModel.getUserHistory(req.session.students, (result)=> {
-        if(!result){
-            res.send("Invalid");
-        }
-        else {
-            console.log(result);
-            res.render('students/borrow-history', {res: result});
-        }
-    });
-});
-
 
 
 module.exports = router;

@@ -54,18 +54,6 @@ router.get('/home', (req, res)=> {
 
 });
 
-router.get('/profile', (req, res)=> {
-    var admin = userModel.getUser(req.session.admin, (result)=> {
-        if(!result){
-            res.send("invalid!");
-        }
-        else {
-            console.log(result);
-            res.render('admin/profile', {res: result});
-        }
-    });
-});
-
 router.get('/profile/edit', (req, res)=> {
     var admin = userModel.getUser(req.session.admin, (result)=> {
         if(!result){
