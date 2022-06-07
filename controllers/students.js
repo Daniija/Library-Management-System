@@ -109,7 +109,7 @@ router.get('/books/borrowed', (req, res)=> {
 });
 
 // students to return book from students page
-router.get('/borrowed-books/update', (req, res)=> {
+router.get('/borrowed-books/delete', (req, res)=> {
     var id = req.params.id;
     console.log(id);
     var book = bookModel.getUnborrowedBooks(id, (result)=> {
